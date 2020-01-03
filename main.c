@@ -5,7 +5,7 @@
 int main() 
 {
 	int player=1;            // 1為player O,-1為player X 
-	int board[9][3][3]={0};  //陣列 全部設0 
+	int board[9][3][3]={0};  //陣列 全部設為0 
 	int bigboard[3][3]={0}; 
 	int now=5,nowtemp;
 	int winner=0;
