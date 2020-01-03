@@ -1,0 +1,37 @@
+# Project: Project66
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o checkgame.o playgame.o display.o
+LINKOBJ  = main.o checkgame.o playgame.o display.o
+LIBS     = -L"C:/Users/user/Downloads/DevCppPortable/MinGW64/lib" -L"C:/Users/user/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/lib" -std=c99
+INCS     = -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/include" -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/include" -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/user/Downloads/DevCppPortable/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project66.exe
+CXXFLAGS = $(CXXINCS) -std=c99
+CFLAGS   = $(INCS) -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+checkgame.o: checkgame.c
+	$(CC) -c checkgame.c -o checkgame.o $(CFLAGS)
+
+playgame.o: playgame.c
+	$(CC) -c playgame.c -o playgame.o $(CFLAGS)
+
+display.o: display.c
+	$(CC) -c display.c -o display.o $(CFLAGS)
